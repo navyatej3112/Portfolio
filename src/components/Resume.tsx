@@ -42,13 +42,19 @@ export function Resume() {
             className="min-h-[70vh] w-full"
             aria-label="Resume PDF viewer"
           >
-            <p className="p-6 text-[var(--color-fg-muted)]">
-              Your browser does not support embedded PDFs.{' '}
-              <a href={resumeUrl} download className="text-[var(--color-accent)] hover:underline">
-                Download the resume
-              </a>{' '}
-              instead.
-            </p>
+            <div className="p-6 text-center">
+              <p className="text-[var(--color-fg-muted)] mb-4">
+                Your browser does not support embedded PDFs.
+              </p>
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--color-accent)] text-white font-medium hover:bg-[var(--color-accent-hover)] transition-colors"
+              >
+                Open resume PDF
+              </a>
+            </div>
           </object>
         </div>
       </motion.div>

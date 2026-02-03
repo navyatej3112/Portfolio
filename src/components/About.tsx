@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Dumbbell, Running, Code, Football, MapPin } from 'lucide-react'
 import { profile } from '../data/profile'
 import { publicUrl } from '../utils/baseUrl'
 
@@ -26,6 +27,33 @@ export function About() {
           <p className="mt-3 text-[var(--color-fg-muted)]">
             Based in {profile.location}. Open to Software Engineer roles starting Summer 2026—backend or full-stack.
           </p>
+
+          {/* Outside work hobbies */}
+          <div className="mt-6 glass-card rounded-xl p-4 border border-[var(--color-card-border)]">
+            <h3 className="text-sm font-semibold text-[var(--color-fg)] mb-3">Outside work</h3>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
+                <Dumbbell size={16} className="text-[var(--color-accent)]" />
+                <span>Gym & fitness</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
+                <Running size={16} className="text-[var(--color-accent)]" />
+                <span>Outdoor running</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
+                <Code size={16} className="text-[var(--color-accent)]" />
+                <span>LeetCode daily</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
+                <Football size={16} className="text-[var(--color-accent)]" />
+                <span>Football</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
+                <MapPin size={16} className="text-[var(--color-accent)]" />
+                <span>Travel</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="order-1 md:order-2 flex justify-center md:justify-end">
           <motion.div

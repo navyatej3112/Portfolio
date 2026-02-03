@@ -71,7 +71,7 @@ export const profile: Profile = {
   githubUrl: 'https://github.com/navyatej3112',
   shortBio: 'Building scalable APIs, cloud-native services, and AI-powered tools. MS Computer Science @ NC State · Graduating May 2026.',
   aboutParagraph:
-    'I focus on backend systems, cloud infrastructure, and practical applications of ML in developer tooling. My experience spans serverless backends, data pipelines, and RAG-based assistants—with an emphasis on clear APIs, observability, and maintainable code. I enjoy turning messy data and requirements into reliable, well-tested services.',
+    'I build backend systems and cloud-native services that scale. My work centers on serverless architectures, data pipelines, and AI-powered developer tools—particularly RAG systems that make knowledge retrieval fast and reliable. I prioritize clean APIs, solid observability, and code that stands the test of time. When I\'m not coding, you\'ll find me at the gym, running outdoors, solving LeetCode problems, watching football, or planning my next travel adventure.',
   skills: [
     { label: 'Languages', items: ['Python', 'Java', 'TypeScript', 'SQL', 'C', 'Ruby'] },
     { label: 'Backend & APIs', items: ['FastAPI', 'Flask', 'Node.js', 'Rasa', 'REST APIs', 'OAuth2', 'JWT'] },
@@ -161,6 +161,6 @@ export const profile: Profile = {
       tags: ['AI/ML', 'Full Stack'],
     },
   ],
-  resumePath: '/resume.pdf',
-  profileImagePath: 'public/profile.jpeg',
+  resumePath: '/Navyatej_Tummala_cv.pdf',
+  profileImagePath: '/profile.jpeg',
 }
