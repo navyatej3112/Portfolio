@@ -51,13 +51,22 @@ The provided GitHub Actions workflow (`.github/workflows/deploy.yml`) sets `BASE
 - If the repo name is `<owner>.github.io`, it uses `/`.
 - Otherwise it uses `/<repository-name>/`.
 
-## Deploy to GitHub Pages
+## Deploy to GitHub Pages (manual, from your laptop)
 
-1. In the repo: **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Push to `main`. The workflow builds and deploys the `dist` folder.
+This deploy does not use GitHub Actions runners. You build locally and push the built site to the `gh-pages` branch.
 
-No need to set `BASE_PATH` manually when using the included workflow.
+1. **Build and publish:**
+   ```bash
+   npm install
+   npm run deploy:pages
+   ```
+2. **Configure GitHub Pages:**
+   - In the repo: **Settings → Pages**.
+   - Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+   - **Branch:** `gh-pages` / **Folder:** `/ (root)`.
+   - Save. The site will be at **https://navyatej3112.github.io/Portfolio/**.
+
+You can run `npm run deploy:pages` whenever you want to update the live site.
 
 ## Content
 
