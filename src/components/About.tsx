@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Dumbbell, Running, Code, Football, MapPin } from 'lucide-react'
+import { Dumbbell, Activity, Code, Zap, MapPin } from 'lucide-react'
 import { profile } from '../data/profile'
 import { publicUrl } from '../utils/baseUrl'
 
@@ -37,7 +37,7 @@ export function About() {
                 <span>Gym & fitness</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
-                <Running size={16} className="text-[var(--color-accent)]" />
+                <Activity size={16} className="text-[var(--color-accent)]" />
                 <span>Outdoor running</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
@@ -45,7 +45,7 @@ export function About() {
                 <span>LeetCode daily</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
-                <Football size={16} className="text-[var(--color-accent)]" />
+                <Zap size={16} className="text-[var(--color-accent)]" />
                 <span>Football</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
