@@ -6,7 +6,7 @@ export function Education() {
   return (
     <section
       id="education"
-      className="py-20 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="education-heading"
     >
       <motion.div
@@ -15,10 +15,10 @@ export function Education() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5 }}
       >
-        <h2 id="education-heading" className="text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
+        <h2 id="education-heading" className="section-title text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
           Education
         </h2>
-        <p className="mt-2 text-[var(--color-fg-muted)]">Degrees and institutions.</p>
+        <p className="mt-2 text-[var(--color-fg-muted)] section-body">Degrees and institutions.</p>
 
         <div className="mt-8 space-y-6">
           {profile.education.map((edu, i) => (

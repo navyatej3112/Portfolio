@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="contact-heading"
     >
       <motion.div
@@ -16,10 +16,10 @@ export function Contact() {
         transition={{ duration: 0.5 }}
         className="glass-card rounded-2xl p-8 sm:p-10 border border-[var(--color-card-border)] max-w-xl mx-auto text-center"
       >
-        <h2 id="contact-heading" className="text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
+        <h2 id="contact-heading" className="section-title text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
           Get in touch
         </h2>
-        <p className="mt-2 text-[var(--color-fg-muted)]">
+        <p className="mt-2 text-[var(--color-fg-muted)] section-body">
           Open to roles starting Summer 2026. Happy to chat about backend, full-stack, or ML systems.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">

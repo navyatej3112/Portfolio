@@ -7,7 +7,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-20 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="about-heading"
     >
       <motion.div
@@ -18,14 +18,14 @@ export function About() {
         className="grid md:grid-cols-2 gap-12 items-center"
       >
         <div className="order-2 md:order-1">
-          <h2 id="about-heading" className="text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
+          <h2 id="about-heading" className="section-title text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
             About
           </h2>
-          <p className="mt-4 text-[var(--color-fg-muted)] leading-relaxed">
-            {profile.aboutParagraph}
+          <p className="mt-4 text-[var(--color-fg-muted)] section-body">
+            {profile.aboutParagraph1}
           </p>
-          <p className="mt-3 text-[var(--color-fg-muted)]">
-            Based in {profile.location}. Open to Software Engineer roles starting Summer 2026—backend or full-stack.
+          <p className="mt-3 text-[var(--color-fg-muted)] section-body">
+            {profile.aboutParagraph2}
           </p>
 
           {/* Outside work hobbies */}

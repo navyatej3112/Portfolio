@@ -5,7 +5,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[var(--color-card-border)] py-8 px-4 sm:px-6" role="contentinfo">
+    <footer className="border-t border-[var(--color-card-border)] py-8 px-5 sm:px-6" role="contentinfo">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-[var(--color-fg-muted)]">
           © {year} {profile.name}. Built with React, Vite, Tailwind.

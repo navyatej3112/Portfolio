@@ -39,7 +39,7 @@ function NavLink({
       {active && (
         <motion.span
           layoutId="nav-pill"
-          className="absolute inset-0 z-0 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20"
+          className="absolute inset-0 z-0 rounded-lg bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/30"
           transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
         />
       )}
@@ -59,8 +59,8 @@ export function Nav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 glass-card border-b border-[var(--color-card-border)]">
-      <nav className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14" aria-label="Main navigation">
+    <header className="sticky top-0 z-50 glass-card border-b border-[var(--color-card-border)] backdrop-blur-md bg-[var(--color-bg)]/80">
+      <nav className="max-w-5xl mx-auto px-5 sm:px-6 flex items-center justify-between h-14" aria-label="Main navigation">
         <a href="#hero" className="font-semibold text-[var(--color-fg)] truncate">
           {profile.name.split(' ')[0]}
         </a>

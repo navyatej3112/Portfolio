@@ -33,8 +33,19 @@ body {
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Section typography */
+.section-title {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.section-body {
+  line-height: 1.7;
 }
 
 /* Soft gradient background */
@@ -61,6 +72,13 @@ body {
   background: var(--color-card);
   border: 1px solid var(--color-card-border);
   backdrop-filter: blur(12px);
+}
+
+/* Project card glass (lighter, perf-friendly) */
+.glass-card-project {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-card-border);
+  backdrop-filter: blur(8px);
 }
 
 #root {

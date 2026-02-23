@@ -47,10 +47,16 @@ export interface Profile {
   phone?: string
   linkedinUrl: string
   githubUrl: string
-  /** Short tagline for hero */
-  shortBio: string
-  /** Longer paragraph for About section */
-  aboutParagraph: string
+  /** Hero headline (static, recruiter-friendly) */
+  heroHeadline: string
+  /** Hero subheadline */
+  heroSubheadline: string
+  /** "Currently" line for hero panel */
+  currentlyLine: string
+  /** About section: first paragraph (technical) */
+  aboutParagraph1: string
+  /** About section: second paragraph (personal/hobbies) */
+  aboutParagraph2: string
   skills: SkillGroup[]
   experience: ExperienceItem[]
   education: EducationItem[]
@@ -69,16 +75,42 @@ export const profile: Profile = {
   phone: '(425) 515-1639',
   linkedinUrl: 'https://www.linkedin.com/in/navyatej-tummala/',
   githubUrl: 'https://github.com/navyatej3112',
-  shortBio: 'Building scalable APIs, cloud-native services, and AI-powered tools. MS Computer Science @ NC State · Graduating May 2026.',
-  aboutParagraph:
-    'I build backend systems and cloud-native services that scale. My work centers on serverless architectures, data pipelines, and AI-powered developer tools—particularly RAG systems that make knowledge retrieval fast and reliable. I prioritize clean APIs, solid observability, and code that stands the test of time. When I\'m not coding, you\'ll find me at the gym, running outdoors, solving LeetCode problems, watching football, or planning my next travel adventure.',
+  heroHeadline: 'Building scalable backend systems and AI-driven developer tools.',
+  heroSubheadline:
+    'MS Computer Science candidate at NC State. Focused on cloud-native architecture, RAG pipelines, and high-performance services.',
+  currentlyLine: 'Currently: Optimizing RAG pipelines and seeking Summer 2026 Software Engineering roles.',
+  aboutParagraph1:
+    'I build backend systems and cloud-native services that scale. My work centers on serverless architectures, data pipelines, and AI-powered developer tools—especially RAG systems that make knowledge retrieval fast and reliable. I care about clean APIs, solid observability, and code that lasts.',
+  aboutParagraph2:
+    'Based in Raleigh, NC. Outside work I stay active with the gym and outdoor running, solve LeetCode daily, enjoy watching football, and love to travel. Open to Software Engineer roles (backend or full-stack) starting Summer 2026.',
   skills: [
-    { label: 'Languages', items: ['Python', 'Java', 'TypeScript', 'SQL', 'C', 'Ruby'] },
-    { label: 'Backend & APIs', items: ['FastAPI', 'Flask', 'Node.js', 'Rasa', 'REST APIs', 'OAuth2', 'JWT'] },
-    { label: 'Cloud & DevOps', items: ['AWS (S3, Lambda, API Gateway, Amplify)', 'Docker', 'Redis', 'GitHub Actions'] },
-    { label: 'ML & NLP', items: ['Sentence Transformers', 'BERT', 'LangChain', 'FAISS', 'Pinecone', 'TensorFlow', 'scikit-learn'] },
-    { label: 'Databases & Tools', items: ['PostgreSQL', 'MySQL', 'Linux', 'Git', 'Postman', 'Power BI', 'MATLAB'] },
-    { label: 'Testing', items: ['pytest', 'JUnit'] },
+    {
+      label: 'Core Backend',
+      items: [
+        'Python',
+        'Java',
+        'TypeScript',
+        'SQL',
+        'FastAPI',
+        'Flask',
+        'Node.js',
+        'REST APIs',
+        'LangChain',
+        'BERT',
+        'PostgreSQL',
+        'Redis',
+        'pytest',
+        'JUnit',
+      ],
+    },
+    {
+      label: 'Cloud/DevOps',
+      items: ['AWS (S3, Lambda, API Gateway, Amplify)', 'Docker', 'GitHub Actions', 'Linux', 'Git'],
+    },
+    {
+      label: 'Frontend',
+      items: ['React', 'TypeScript', 'Tailwind CSS', 'HTML/CSS'],
+    },
   ],
   experience: [
     {

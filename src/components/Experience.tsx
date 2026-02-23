@@ -5,7 +5,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-20 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="experience-heading"
     >
       <motion.div
@@ -14,10 +14,10 @@ export function Experience() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5 }}
       >
-        <h2 id="experience-heading" className="text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
+        <h2 id="experience-heading" className="section-title text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
           Experience
         </h2>
-        <p className="mt-2 text-[var(--color-fg-muted)]">Where I&apos;ve built and shipped.</p>
+        <p className="mt-2 text-[var(--color-fg-muted)] section-body">Where I&apos;ve built and shipped.</p>
 
         <div className="mt-10 relative">
           {/* Timeline line */}
@@ -48,7 +48,7 @@ export function Experience() {
                   </div>
                   <p className="text-[var(--color-accent)] font-medium mt-0.5">{job.company}</p>
                   <p className="text-sm text-[var(--color-fg-muted)]">{job.location}</p>
-                  <ul className="mt-4 space-y-2 list-disc list-inside text-[var(--color-fg-muted)] text-sm">
+                  <ul className="mt-4 space-y-2 list-disc list-inside text-[var(--color-fg-muted)] text-sm section-body">
                     {job.bullets.map((b, j) => (
                       <li key={j}>{b}</li>
                     ))}

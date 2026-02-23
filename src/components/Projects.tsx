@@ -16,43 +16,47 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      whileHover={{ y: -4 }}
-      className="glass-card rounded-xl p-5 border border-[var(--color-card-border)] hover:border-[var(--color-accent)]/30 transition-colors group"
+      whileHover={{ y: -6 }}
+      className="glass-card-project rounded-xl overflow-hidden border border-[var(--color-card-border)] hover:border-[var(--color-accent)]/40 hover:shadow-[0_0_20px_rgba(124,58,237,0.12)] transition-all duration-300 group"
     >
-      <div className="flex flex-wrap items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold text-[var(--color-fg)]">{project.title}</h3>
-        {(gh?.stars !== undefined && gh.stars > 0) || gh?.updatedAt ? (
-          <div className="flex items-center gap-3 text-xs text-[var(--color-fg-muted)]">
-            {gh?.stars != null && gh.stars > 0 && (
-              <span className="flex items-center gap-1">
-                <Star size={12} /> {gh.stars}
-              </span>
-            )}
-            {gh?.updatedAt && (
-              <span className="flex items-center gap-1" title="Last updated">
-                <Calendar size={12} /> {new Date(gh.updatedAt).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })}
-              </span>
-            )}
-          </div>
-        ) : null}
-      </div>
-      <p className="mt-2 text-sm text-[var(--color-fg-muted)]">{project.oneLiner}</p>
-      <ul className="mt-3 space-y-1 text-sm text-[var(--color-fg-muted)] list-disc list-inside">
-        {project.highlights.map((h, i) => (
-          <li key={i}>{h}</li>
-        ))}
-      </ul>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="px-2 py-0.5 text-xs rounded bg-[var(--color-bg)]/80 text-[var(--color-fg-muted)] border border-[var(--color-card-border)]"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-      <div className="mt-4 flex items-center gap-3">
+      {/* 16:9 placeholder area for project media */}
+      <div className="aspect-video w-full bg-[var(--color-bg)]/80 border-b border-[var(--color-card-border)]" aria-hidden="true" />
+      <div className="p-5">
+        <div className="flex flex-wrap items-start justify-between gap-2">
+          <h3 className="text-lg font-semibold text-[var(--color-fg)]">{project.title}</h3>
+          {(gh?.stars !== undefined && gh.stars > 0) || gh?.updatedAt ? (
+            <div className="flex items-center gap-3 text-xs text-[var(--color-fg-muted)]">
+              {gh?.stars != null && gh.stars > 0 && (
+                <span className="flex items-center gap-1">
+                  <Star size={12} /> {gh.stars}
+                </span>
+              )}
+              {gh?.updatedAt && (
+                <span className="flex items-center gap-1" title="Last updated">
+                  <Calendar size={12} /> {new Date(gh.updatedAt).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })}
+                </span>
+              )}
+            </div>
+          ) : null}
+        </div>
+        <p className="mt-2 text-sm text-[var(--color-fg-muted)] section-body">{project.oneLiner}</p>
+        <ul className="mt-3 space-y-1 text-sm text-[var(--color-fg-muted)] list-disc list-inside section-body">
+          {project.highlights.map((h, i) => (
+            <li key={i}>{h}</li>
+          ))}
+        </ul>
+        {/* Tech pill tags at bottom of card */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="px-2.5 py-1 text-xs font-medium rounded-full bg-[var(--color-bg)]/80 text-[var(--color-fg-muted)] border border-[var(--color-card-border)]"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+        <div className="mt-4 flex items-center gap-3">
         {project.githubUrl && (
           <a
             href={project.githubUrl}
@@ -73,6 +77,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
             <ExternalLink size={16} /> Live
           </a>
         )}
+        </div>
       </div>
     </motion.article>
   )
@@ -89,7 +94,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="projects-heading"
     >
       <motion.div
@@ -98,10 +103,10 @@ export function Projects() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5 }}
       >
-        <h2 id="projects-heading" className="text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
+        <h2 id="projects-heading" className="section-title text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
           Projects
         </h2>
-        <p className="mt-2 text-[var(--color-fg-muted)]">Selected work and side projects.</p>
+        <p className="mt-2 text-[var(--color-fg-muted)] section-body">Selected work and side projects.</p>
 
         <div className="mt-6 flex flex-wrap gap-2" role="tablist" aria-label="Filter projects">
           {FILTERS.map((f) => (

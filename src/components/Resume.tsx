@@ -9,7 +9,7 @@ export function Resume() {
   return (
     <section
       id="resume"
-      className="py-20 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="resume-heading"
     >
       <motion.div
@@ -18,10 +18,10 @@ export function Resume() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5 }}
       >
-        <h2 id="resume-heading" className="text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
+        <h2 id="resume-heading" className="section-title text-2xl sm:text-3xl font-bold text-[var(--color-fg)]">
           Resume
         </h2>
-        <p className="mt-2 text-[var(--color-fg-muted)]">View or download my resume (PDF).</p>
+        <p className="mt-2 text-[var(--color-fg-muted)] section-body">View or download my resume (PDF).</p>
 
         <div className="mt-6 flex flex-wrap gap-3">
           <a
