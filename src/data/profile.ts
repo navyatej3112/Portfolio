@@ -21,15 +21,29 @@ export interface EducationItem {
   gpa?: string
 }
 
+export interface ProjectLinks {
+  github?: string
+  devpost?: string
+  live?: string
+}
+
 export interface ProjectItem {
   title: string
+  /** Optional display date, e.g. "2024" or "Hackathon 2024" */
+  date?: string
   oneLiner: string
-  highlights: [string, string, string]
+  highlights: string[]
   tech: string[]
+  /** Prefer links; githubUrl/liveUrl kept for backward compat */
+  links?: ProjectLinks
   githubUrl?: string
   githubRepo?: string
   liveUrl?: string
   tags: string[]
+  /** Mini system snapshot: 3 steps shown as chips, e.g. ["Client", "API Gateway", "Lambda/DynamoDB"] */
+  snapshotSteps?: [string, string, string]
+  /** Lucide icon key for card badge: map, activity, timer, barChart, messageSquare */
+  iconKey?: string
 }
 
 export interface SkillGroup {
@@ -180,14 +194,60 @@ export const profile: Profile = {
   projects: [
     {
       title: 'Spidey Social',
-      oneLiner: 'Hackathon-winning real-time social app built with React, TypeScript, and AWS serverless stack.',
+      date: 'Hackathon 2024',
+      oneLiner: 'Hackathon-winning, location-based social app where posts expire and real-time chats start with a single "swing-in."',
       highlights: [
-        'Full-stack app with AWS Lambda, DynamoDB, API Gateway, WebSockets, and Cognito.',
-        'Infrastructure as code with AWS CDK; monitoring with CloudWatch.',
-        'Won hackathon recognition for execution and technical depth.',
+        'Geo-filtered feed and radar view for nearby posts.',
+        'Real-time updates for posts and chat via WebSockets (no polling).',
+        'Serverless AWS stack: Lambda, API Gateway (REST + WS), DynamoDB, Cognito, CDK.',
       ],
       tech: ['React', 'TypeScript', 'AWS Lambda', 'DynamoDB', 'API Gateway', 'WebSockets', 'Cognito', 'AWS CDK', 'CloudWatch'],
+      links: { github: 'https://github.com/Pack2Prod/spidey-social', devpost: 'https://devpost.com/software/spidey-social' },
       tags: ['Full Stack', 'Systems'],
+      snapshotSteps: ['Client', 'API Gateway', 'Lambda/DynamoDB'],
+      iconKey: 'map',
+    },
+    {
+      title: 'PaceTrail',
+      oneLiner: 'Strava-like activity tracker with GPX/TCX uploads, social feed, and leaderboards.',
+      highlights: [
+        'Upload and process activities to compute route stats.',
+        'Leaderboards and segments with PR/KOM-style tracking.',
+        'FastAPI backend and Next.js frontend; Dockerized local stack.',
+      ],
+      tech: ['FastAPI', 'Next.js', 'TypeScript', 'Postgres', 'Docker'],
+      links: { github: 'https://github.com/navyatej3112/Strava-clone' },
+      tags: ['Full Stack', 'Data'],
+      snapshotSteps: ['Upload', 'Parse', 'Leaderboards'],
+      iconKey: 'activity',
+    },
+    {
+      title: 'Study Copilot',
+      oneLiner: 'Focus-session dashboard with Pomodoro timer, tasks, notes, and quick commands.',
+      highlights: [
+        'Timer presets and session history; state persists across refresh.',
+        'Task CRUD with status/priority and Ctrl+K command bar.',
+        'Next.js, Prisma, Neon Postgres; optional voice input via Web Speech API.',
+      ],
+      tech: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma', 'PostgreSQL', 'Neon', 'Zustand', 'Zod'],
+      links: { github: 'https://github.com/navyatej3112/Study-copilot' },
+      tags: ['Full Stack'],
+      snapshotSteps: ['Timer', 'Tasks', 'Notes'],
+      iconKey: 'timer',
+    },
+    {
+      title: 'MatchMind',
+      oneLiner: 'Sports analytics and match prediction app with ML-backed probability outputs.',
+      highlights: [
+        'FastAPI and PostgreSQL API with SQLAlchemy and Alembic.',
+        'Logistic regression predictions with probability visualizations.',
+        'Docker Compose monorepo with React and TypeScript frontend.',
+      ],
+      tech: ['FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'scikit-learn', 'Docker Compose'],
+      links: { github: 'https://github.com/navyatej3112/matchmind' },
+      tags: ['AI/ML', 'Data'],
+      snapshotSteps: ['Data', 'Model', 'Probabilities'],
+      iconKey: 'barChart',
     },
     {
       title: 'OnCall Copilot',
@@ -198,9 +258,11 @@ export const profile: Profile = {
         'Containerized FastAPI service with Docker; suggests mitigation steps and dashboard links.',
       ],
       tech: ['Python', 'FAISS', 'Pinecone', 'LangChain', 'Slack Bolt', 'FastAPI', 'Docker', 'Redis'],
-      githubUrl: 'https://github.com/navyatej3112/OnCall-Copilot',
+      links: { github: 'https://github.com/navyatej3112/OnCall-Copilot' },
       githubRepo: 'navyatej3112/OnCall-Copilot',
       tags: ['AI/ML', 'Systems'],
+      snapshotSteps: ['Slack', 'RAG', 'Answers'],
+      iconKey: 'messageSquare',
     },
   ],
   resumePath: '/Navyatej_Tummala_cv.pdf',
