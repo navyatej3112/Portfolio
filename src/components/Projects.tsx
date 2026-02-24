@@ -1,11 +1,19 @@
 import { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { Github, ExternalLink, Star, Calendar } from 'lucide-react'
+import { Github, ExternalLink, Star, Calendar, Layers } from 'lucide-react'
 import { profile } from '../data/profile'
 import { useGitHubRepo } from '../hooks/useGitHubRepo'
 import type { ProjectItem } from '../data/profile'
 
 const FILTERS = ['All', 'AI/ML', 'Full Stack', 'Data', 'Systems']
+
+/** Rotate through 2–3 pill styles for contrast */
+function getPillVariant(i: number) {
+  const v = i % 3
+  if (v === 0) return 'bg-[var(--color-accent)]/15 text-[var(--color-accent)] border-[var(--color-accent)]/30'
+  if (v === 1) return 'bg-[var(--color-bg)]/90 text-[var(--color-fg-muted)] border-[var(--color-card-border)]'
+  return 'bg-[var(--color-card)] text-[var(--color-fg)] border-[var(--color-card-border)]'
+}
 
 function ProjectCard({ project, index }: { project: ProjectItem; index: number }) {
   const { data: gh } = useGitHubRepo(project.githubRepo)
@@ -19,8 +27,13 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
       whileHover={{ y: -6 }}
       className="glass-card-project rounded-xl overflow-hidden border border-[var(--color-card-border)] hover:border-[var(--color-accent)]/40 hover:shadow-[0_0_20px_rgba(124,58,237,0.12)] transition-all duration-300 group"
     >
-      {/* 16:9 placeholder area for project media */}
-      <div className="aspect-video w-full bg-[var(--color-bg)]/80 border-b border-[var(--color-card-border)]" aria-hidden="true" />
+      {/* 16:9 placeholder: gradient + icon, object-cover if image added later */}
+      <div
+        className="aspect-video w-full border-b border-[var(--color-card-border)] flex items-center justify-center bg-gradient-to-br from-[var(--color-bg)] via-[var(--color-accent)]/10 to-[var(--color-bg)]"
+        aria-hidden="true"
+      >
+        <Layers size={40} className="text-[var(--color-accent)]/40" />
+      </div>
       <div className="p-5">
         <div className="flex flex-wrap items-start justify-between gap-2">
           <h3 className="text-lg font-semibold text-[var(--color-fg)]">{project.title}</h3>
@@ -45,12 +58,12 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
             <li key={i}>{h}</li>
           ))}
         </ul>
-        {/* Tech pill tags at bottom of card */}
+        {/* High-contrast tech pill tags */}
         <div className="mt-4 flex flex-wrap gap-2">
-          {project.tech.map((t) => (
+          {project.tech.map((t, i) => (
             <span
               key={t}
-              className="px-2.5 py-1 text-xs font-medium rounded-full bg-[var(--color-bg)]/80 text-[var(--color-fg-muted)] border border-[var(--color-card-border)]"
+              className={`px-2.5 py-1 text-xs font-medium rounded-full border ${getPillVariant(i)}`}
             >
               {t}
             </span>
@@ -94,7 +107,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="section-padding py-16 md:py-24 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="projects-heading"
     >
       <motion.div

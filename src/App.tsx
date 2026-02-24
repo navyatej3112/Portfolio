@@ -1,6 +1,5 @@
 import { Nav } from './components/Nav'
-import { Hero } from './components/Hero'
-import { About } from './components/About'
+import { HeroAbout } from './components/HeroAbout'
 import { Skills } from './components/Skills'
 import { Experience } from './components/Experience'
 import { Projects } from './components/Projects'
@@ -16,8 +15,7 @@ function App() {
       <div className="min-h-screen gradient-bg noise">
         <Nav />
         <main>
-          <Hero />
-          <About />
+          <HeroAbout />
           <Skills />
           <Experience />
           <Projects />

@@ -9,7 +9,7 @@ export function Resume() {
   return (
     <section
       id="resume"
-      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="section-padding py-16 md:py-24 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="resume-heading"
     >
       <motion.div
@@ -57,6 +57,18 @@ export function Resume() {
             </div>
           </object>
         </div>
+        <p className="mt-3 text-sm text-[var(--color-fg-muted)]">
+          If the PDF does not load above,{' '}
+          <a
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-accent)] hover:underline"
+          >
+            open resume PDF
+          </a>
+          {' '}in a new tab.
+        </p>
       </motion.div>
     </section>
   )

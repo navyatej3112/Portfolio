@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="section-padding py-16 md:py-24 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="contact-heading"
     >
       <motion.div

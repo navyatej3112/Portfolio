@@ -5,7 +5,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
+      className="section-padding py-16 md:py-24 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-20"
       aria-labelledby="skills-heading"
     >
       <motion.div
@@ -18,7 +18,7 @@ export function Skills() {
           Skills
         </h2>
         <p className="mt-2 text-[var(--color-fg-muted)] section-body">
-          Grouped for easier scanning: Core Backend, Cloud/DevOps, Frontend.
+          Languages, backend, cloud, AI/ML, databases, and quality—grouped for quick scanning.
         </p>
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {profile.skills.map((group, i) => (
